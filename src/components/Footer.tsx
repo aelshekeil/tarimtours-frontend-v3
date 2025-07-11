@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
                 <div className="w-12 h-1 bg-gradient-to-r from-blue-400 to-teal-400 rounded-full mb-4 group-hover:w-16 transition-all duration-300"></div>
               </div>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Your trusted partner for global travel services, visa processing, and business solutions.
+                {t('common.trusted_partner')}
               </p>
               <div className="flex space-x-4">
                 <div className="p-2 bg-gray-800 rounded-full hover:bg-blue-600 transition-all duration-300 hover:scale-110 cursor-pointer group">
@@ -59,38 +59,38 @@ const Footer: React.FC = () => {
             {/* Services */}
             <div className="group">
               <h4 className="text-xl font-semibold mb-6 text-white relative">
-                Services
+                {t('common.services_title')}
                 <div className="absolute -bottom-2 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-teal-400 group-hover:w-full transition-all duration-300"></div>
               </h4>
               <ul className="space-y-3">
                 <li>
                   <a href="#" className="text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center group/link">
                     <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></span>
-                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">Visa Services</span>
+                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">{t('common.visa_services_link')}</span>
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center group/link">
                     <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></span>
-                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">International Driving License</span>
+                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">{t('common.idl_link')}</span>
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center group/link">
                     <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></span>
-                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">Business Incorporation</span>
+                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">{t('common.business_incorporation_link')}</span>
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center group/link">
                     <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></span>
-                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">Travel Packages</span>
+                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">{t('common.travel_packages_link')}</span>
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center group/link">
                     <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></span>
-                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">eSIM Sales</span>
+                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">{t('common.esim_sales_link')}</span>
                   </a>
                 </li>
               </ul>
@@ -99,38 +99,38 @@ const Footer: React.FC = () => {
             {/* Quick Links */}
             <div className="group">
               <h4 className="text-xl font-semibold mb-6 text-white relative">
-                Quick Links
+                {t('common.quick_links_title')}
                 <div className="absolute -bottom-2 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-teal-400 group-hover:w-full transition-all duration-300"></div>
               </h4>
               <ul className="space-y-3">
                 <li>
                   <a href="#" className="text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center group/link">
                     <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></span>
-                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">About Us</span>
+                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">{t('common.about_us_link')}</span>
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center group/link">
                     <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></span>
-                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">Track Application</span>
+                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">{t('common.track_application_link')}</span>
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center group/link">
                     <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></span>
-                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">FAQ</span>
+                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">{t('common.faq_link')}</span>
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center group/link">
                     <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></span>
-                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">Terms & Conditions</span>
+                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">{t('common.terms_conditions_link')}</span>
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center group/link">
                     <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></span>
-                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">Privacy Policy</span>
+                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">{t('common.privacy_policy_link')}</span>
                   </a>
                 </li>
               </ul>
@@ -175,14 +175,14 @@ const Footer: React.FC = () => {
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 Tarim Tours. All rights reserved.
+              {t('common.all_rights_reserved')}
             </p>
             <button
               onClick={scrollToTop}
               className="flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               <ArrowUp size={16} />
-              <span className="text-sm">Back to Top</span>
+              <span className="text-sm">{t('common.back_to_top')}</span>
             </button>
           </div>
         </div>

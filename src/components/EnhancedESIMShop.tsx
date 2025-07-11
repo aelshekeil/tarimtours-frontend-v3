@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import CountryGrid from './CountryGrid';
 import PlanSelectionModal from './PlanSelectionModal';
 import { Country, EsimPlan } from '../lib/esimApi';
 import { useCart } from '../hooks/useCart';
 
 const EnhancedESIMShop: React.FC = () => {
+  const { t } = useTranslation();
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { addToCart } = useCart();
@@ -49,7 +51,7 @@ const EnhancedESIMShop: React.FC = () => {
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
         </svg>
-        <span>Added ${country.name} eSIM plan (${plan.data_gb}) to cart!</span>
+        <span>${t('enhanced_esim_shop.added_to_cart', { countryName: country.name, planData: plan.data_gb })}</span>
       </div>
     `;
     document.body.appendChild(notification);
@@ -98,29 +100,28 @@ const EnhancedESIMShop: React.FC = () => {
               </svg>
             </div>
             <h1 className="text-5xl font-bold text-white mb-6 tracking-tight">
-              eSIM Plans
+              {t('enhanced_esim_shop.esim_plans')}
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-pink-300">
-                Worldwide
+                {t('enhanced_esim_shop.worldwide')}
               </span>
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Stay connected anywhere in the world with our reliable eSIM plans. 
-              Choose your destination and find the perfect data plan for your travels.
+              {t('enhanced_esim_shop.subtitle')}
             </p>
             
             {/* Stats Bar */}
             <div className="mt-12 flex flex-wrap justify-center gap-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-white">190+</div>
-                <div className="text-blue-200 text-sm uppercase tracking-wider">Countries</div>
+                <div className="text-blue-200 text-sm uppercase tracking-wider">{t('enhanced_esim_shop.stats.countries')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-white">99.9%</div>
-                <div className="text-blue-200 text-sm uppercase tracking-wider">Uptime</div>
+                <div className="text-blue-200 text-sm uppercase tracking-wider">{t('enhanced_esim_shop.stats.uptime')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-white">Instant</div>
-                <div className="text-blue-200 text-sm uppercase tracking-wider">Activation</div>
+                <div className="text-blue-200 text-sm uppercase tracking-wider">{t('enhanced_esim_shop.stats.activation')}</div>
               </div>
             </div>
           </div>
@@ -138,8 +139,8 @@ const EnhancedESIMShop: React.FC = () => {
       <div className="relative -mt-1 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Choose Your Destination</h2>
-            <p className="text-gray-600">Select a country to view available eSIM plans</p>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('enhanced_esim_shop.choose_destination')}</h2>
+            <p className="text-gray-600">{t('enhanced_esim_shop.select_country_prompt')}</p>
           </div>
           <CountryGrid onCountrySelect={handleCountrySelect} />
         </div>
@@ -165,10 +166,10 @@ const EnhancedESIMShop: React.FC = () => {
         <div className="relative max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Our eSIM Plans?
+              {t('enhanced_esim_shop.why_choose_us')}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Experience seamless connectivity with our premium eSIM solutions designed for modern travelers
+              {t('enhanced_esim_shop.why_choose_us_subtitle')}
             </p>
           </div>
           
@@ -180,8 +181,8 @@ const EnhancedESIMShop: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Instant Activation</h3>
-              <p className="text-gray-600 leading-relaxed">Get connected immediately after purchase. No waiting, no delays. Start using your eSIM within minutes.</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{t('enhanced_esim_shop.features.instant_activation.title')}</h3>
+              <p className="text-gray-600 leading-relaxed">{t('enhanced_esim_shop.features.instant_activation.description')}</p>
             </div>
 
             {/* Feature 2 */}
@@ -191,8 +192,8 @@ const EnhancedESIMShop: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Global Coverage</h3>
-              <p className="text-gray-600 leading-relaxed">Stay connected in over 190+ countries and regions worldwide with our extensive network partnerships.</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{t('enhanced_esim_shop.features.global_coverage.title')}</h3>
+              <p className="text-gray-600 leading-relaxed">{t('enhanced_esim_shop.features.global_coverage.description')}</p>
             </div>
 
             {/* Feature 3 */}
@@ -202,8 +203,8 @@ const EnhancedESIMShop: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Secure & Reliable</h3>
-              <p className="text-gray-600 leading-relaxed">Enterprise-grade security with 99.9% network uptime guarantee. Your data is protected with advanced encryption.</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{t('enhanced_esim_shop.features.secure_reliable.title')}</h3>
+              <p className="text-gray-600 leading-relaxed">{t('enhanced_esim_shop.features.secure_reliable.description')}</p>
             </div>
           </div>
 
@@ -211,23 +212,23 @@ const EnhancedESIMShop: React.FC = () => {
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center p-6 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors duration-300">
               <div className="text-3xl mb-2">📱</div>
-              <h4 className="font-semibold text-gray-900 mb-1">Easy Setup</h4>
-              <p className="text-sm text-gray-600">Simple QR code activation</p>
+              <h4 className="font-semibold text-gray-900 mb-1">{t('enhanced_esim_shop.features.easy_setup.title')}</h4>
+              <p className="text-sm text-gray-600">{t('enhanced_esim_shop.features.easy_setup.description')}</p>
             </div>
             <div className="text-center p-6 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors duration-300">
               <div className="text-3xl mb-2">💰</div>
-              <h4 className="font-semibold text-gray-900 mb-1">Best Prices</h4>
-              <p className="text-sm text-gray-600">Competitive rates worldwide</p>
+              <h4 className="font-semibold text-gray-900 mb-1">{t('enhanced_esim_shop.features.best_prices.title')}</h4>
+              <p className="text-sm text-gray-600">{t('enhanced_esim_shop.features.best_prices.description')}</p>
             </div>
             <div className="text-center p-6 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors duration-300">
               <div className="text-3xl mb-2">🔄</div>
-              <h4 className="font-semibold text-gray-900 mb-1">No Contracts</h4>
-              <p className="text-sm text-gray-600">Pay as you go flexibility</p>
+              <h4 className="font-semibold text-gray-900 mb-1">{t('enhanced_esim_shop.features.no_contracts.title')}</h4>
+              <p className="text-sm text-gray-600">{t('enhanced_esim_shop.features.no_contracts.description')}</p>
             </div>
             <div className="text-center p-6 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors duration-300">
               <div className="text-3xl mb-2">🎧</div>
-              <h4 className="font-semibold text-gray-900 mb-1">24/7 Support</h4>
-              <p className="text-sm text-gray-600">Always here to help</p>
+              <h4 className="font-semibold text-gray-900 mb-1">{t('enhanced_esim_shop.features.support.title')}</h4>
+              <p className="text-sm text-gray-600">{t('enhanced_esim_shop.features.support.description')}</p>
             </div>
           </div>
         </div>
@@ -236,12 +237,12 @@ const EnhancedESIMShop: React.FC = () => {
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-indigo-600 to-purple-600 py-16">
         <div className="max-w-4xl mx-auto text-center px-4">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Stay Connected?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">{t('enhanced_esim_shop.cta.title')}</h2>
           <p className="text-xl text-indigo-100 mb-8">
-            Join thousands of travelers who trust our eSIM solutions for their connectivity needs.
+            {t('enhanced_esim_shop.cta.subtitle')}
           </p>
           <button className="bg-white text-indigo-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-            Browse Countries
+            {t('enhanced_esim_shop.cta.button')}
           </button>
         </div>
       </div>

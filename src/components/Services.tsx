@@ -3,19 +3,26 @@ import { FileText, Car, Building, Plane, Smartphone, ArrowRight, Star, CheckCirc
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import { useTranslation } from 'react-i18next';
 
 const Services: React.FC = () => {
   const { isLoggedIn } = useAuth();
+  const { t } = useTranslation();
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const navigate = useNavigate();
 
   const services = [
     {
       icon: <FileText size={48} />,
-      title: 'Visa Services',
-      description: 'E-Visa and Transit Visa services for multiple countries with fast processing.',
-      features: ['E-Visa Processing', 'Transit Visa', 'Document Assistance', 'Fast Approval'],
-      action: 'Apply Now',
+      title: t('common.visa_services_title'),
+      description: t('common.visa_services_description'),
+      features: [
+        t('common.visa_services_feature1'),
+        t('common.visa_services_feature2'),
+        t('common.visa_services_feature3'),
+        t('common.visa_services_feature4')
+      ],
+      action: t('common.apply_now_action'),
       onClick: () => navigate('/visa-services'),
       requiresAuth: true,
       color: 'from-blue-500 to-indigo-600',
@@ -25,10 +32,15 @@ const Services: React.FC = () => {
     },
     {
       icon: <Car size={48} />,
-      title: 'International Driving License',
-      description: 'Get your International Driving Permit recognized worldwide.',
-      features: ['Worldwide Recognition', 'Quick Processing', 'Document Support', 'Multiple Languages'],
-      action: 'Apply Now',
+      title: t('common.international_driving_license_title'),
+      description: t('common.international_driving_license_description'),
+      features: [
+        t('common.international_driving_license_feature1'),
+        t('common.international_driving_license_feature2'),
+        t('common.international_driving_license_feature3'),
+        t('common.international_driving_license_feature4')
+      ],
+      action: t('common.apply_now_action'),
       onClick: () => navigate('/international-driving-license'),
       requiresAuth: true,
       color: 'from-green-500 to-emerald-600',
@@ -37,10 +49,15 @@ const Services: React.FC = () => {
     },
     {
       icon: <Building size={48} />,
-      title: 'Business Incorporation',
-      description: 'Establish your business in Indonesia, Malaysia, Singapore, or UK.',
-      features: ['Company Registration', 'Legal Documentation', 'Tax Setup', 'Banking Assistance'],
-      action: 'Learn More',
+      title: t('common.business_incorporation_title'),
+      description: t('common.business_incorporation_description'),
+      features: [
+        t('common.business_incorporation_feature1'),
+        t('common.business_incorporation_feature2'),
+        t('common.business_incorporation_feature3'),
+        t('common.business_incorporation_feature4')
+      ],
+      action: t('common.learn_more_action'),
       onClick: () => navigate('/business-incorporation'),
       requiresAuth: true,
       color: 'from-purple-500 to-violet-600',
@@ -49,10 +66,15 @@ const Services: React.FC = () => {
     },
     {
       icon: <Plane size={48} />,
-      title: 'Travel Packages',
-      description: 'Curated travel experiences to destinations worldwide.',
-      features: ['Custom Itineraries', 'Group Discounts', 'Local Guides', 'All-Inclusive Options'],
-      action: 'View Packages',
+      title: t('common.travel_packages_title'),
+      description: t('common.travel_packages_description'),
+      features: [
+        t('common.travel_packages_feature1'),
+        t('common.travel_packages_feature2'),
+        t('common.travel_packages_feature3'),
+        t('common.travel_packages_feature4')
+      ],
+      action: t('common.view_packages_action'),
       onClick: () => navigate('/travel-packages'),
       requiresAuth: false,
       color: 'from-orange-500 to-red-500',
@@ -61,10 +83,15 @@ const Services: React.FC = () => {
     },
     {
       icon: <Smartphone size={48} />,
-      title: 'eSIM Sales',
-      description: 'Stay connected globally with our eSIM packages.',
-      features: ['Global Coverage', 'Instant Activation', 'Data Plans', 'No Roaming Fees'],
-      action: 'Shop Now',
+      title: t('common.esim_sales_title'),
+      description: t('common.esim_sales_description'),
+      features: [
+        t('common.esim_sales_feature1'),
+        t('common.esim_sales_feature2'),
+        t('common.esim_sales_feature3'),
+        t('common.esim_sales_feature4')
+      ],
+      action: t('common.shop_now_action'),
       onClick: () => navigate('/esim'),
       requiresAuth: false,
       color: 'from-teal-500 to-cyan-600',
@@ -88,10 +115,10 @@ const Services: React.FC = () => {
             <Star className="w-8 h-8 text-white" />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-4">
-            Our Premium Services
+            {t('common.our_premium_services')}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Comprehensive travel and business solutions designed to make your journey seamless and successful
+            {t('common.comprehensive_solutions_description')}
           </p>
         </div>
 
@@ -109,7 +136,7 @@ const Services: React.FC = () => {
               {service.popular && (
                 <div className="absolute -top-3 -right-3 z-20">
                   <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-bounce">
-                    Most Popular
+                    {t('common.most_popular')}
                   </div>
                 </div>
               )}
@@ -167,7 +194,7 @@ const Services: React.FC = () => {
                     <div className="mt-4 text-center">
                       <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 border border-yellow-200">
                         <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2 animate-pulse"></div>
-                        Login Required
+                        {t('common.login_required_badge')}
                       </span>
                     </div>
                   )}
@@ -183,9 +210,9 @@ const Services: React.FC = () => {
         {/* Bottom CTA section */}
         <div className="text-center mt-16">
           <div className="inline-flex items-center justify-center space-x-2 text-gray-600 bg-white px-6 py-3 rounded-full shadow-md">
-            <span className="text-sm font-medium">Need help choosing?</span>
+            <span className="text-sm font-medium">{t('common.need_help_choosing')}</span>
             <button className="text-blue-600 hover:text-blue-700 font-semibold text-sm transition-colors">
-              Contact our experts
+              {t('common.contact_our_experts')}
             </button>
           </div>
         </div>

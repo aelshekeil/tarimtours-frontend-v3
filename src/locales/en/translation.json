@@ -71,7 +71,77 @@
     "no_packages_found_title": "No Packages Found",
     "no_packages_found_text": "We couldn't find any packages matching your criteria. Try adjusting your filters.",
     "error_loading_packages": "Error Loading Packages",
-    "try_again": "Try Again"
+    "try_again": "Try Again",
+    "your_cart_is_empty": "Your cart is empty",
+    "start_adding_travel_experiences": "Start adding some amazing travel experiences to your cart!",
+    "cart": "Cart",
+    "item": "item",
+    "items": "items",
+    "remove": "Remove",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "free": "Free",
+    "total_price": "Total",
+    "proceed_to_checkout": "Proceed to Checkout",
+    "clear_cart": "Clear Cart",
+    "trusted_partner": "Your trusted partner for global travel services, visa processing, and business solutions.",
+    "services_title": "Services",
+    "visa_services_link": "Visa Services",
+    "idl_link": "International Driving License",
+    "business_incorporation_link": "Business Incorporation",
+    "travel_packages_link": "Travel Packages",
+    "esim_sales_link": "eSIM Sales",
+    "quick_links_title": "Quick Links",
+    "about_us_link": "About Us",
+    "track_application_link": "Track Application",
+    "faq_link": "FAQ",
+    "terms_conditions_link": "Terms & Conditions",
+    "privacy_policy_link": "Privacy Policy",
+    "all_rights_reserved": "© 2024 Tarim Tours. All rights reserved.",
+    "back_to_top": "Back to Top",
+    "our_premium_services": "Our Premium Services",
+    "comprehensive_solutions_description": "Comprehensive travel and business solutions designed to make your journey seamless and successful",
+    "most_popular": "Most Popular",
+    "need_help_choosing": "Need help choosing?",
+    "contact_our_experts": "Contact our experts",
+    "visa_services_title": "Visa Services",
+    "visa_services_description": "E-Visa and Transit Visa services for multiple countries with fast processing.",
+    "visa_services_feature1": "E-Visa Processing",
+    "visa_services_feature2": "Transit Visa",
+    "visa_services_feature3": "Document Assistance",
+    "visa_services_feature4": "Fast Approval",
+    "international_driving_license_title": "International Driving License",
+    "international_driving_license_description": "Get your International Driving Permit recognized worldwide.",
+    "international_driving_license_feature1": "Worldwide Recognition",
+    "international_driving_license_feature2": "Quick Processing",
+    "international_driving_license_feature3": "Document Support",
+    "international_driving_license_feature4": "Multiple Languages",
+    "business_incorporation_title": "Business Incorporation",
+    "business_incorporation_description": "Establish your business in Indonesia, Malaysia, Singapore, or UK.",
+    "business_incorporation_feature1": "Company Registration",
+    "business_incorporation_feature2": "Legal Documentation",
+    "business_incorporation_feature3": "Tax Setup",
+    "business_incorporation_feature4": "Banking Assistance",
+    "travel_packages_title": "Travel Packages",
+    "travel_packages_description": "Curated travel experiences to destinations worldwide.",
+    "travel_packages_feature1": "Custom Itineraries",
+    "travel_packages_feature2": "Group Discounts",
+    "travel_packages_feature3": "Local Guides",
+    "travel_packages_feature4": "All-Inclusive Options",
+    "esim_sales_title": "eSIM Sales",
+    "esim_sales_description": "Stay connected globally with our eSIM packages.",
+    "esim_sales_feature1": "Global Coverage",
+    "esim_sales_feature2": "Instant Activation",
+    "esim_sales_feature3": "Data Plans",
+    "esim_sales_feature4": "No Roaming Fees",
+    "apply_now_action": "Apply Now",
+    "learn_more_action": "Learn More",
+    "view_packages_action": "View Packages",
+    "shop_now_action": "Shop Now",
+    "login_required_badge": "Login Required",
+    "explore_southeast_asia_description": "Explore the best of Southeast Asia with TarimTours",
+    "search_destinations_activities_placeholder": "Search destinations, activities...",
+    "days": "days"
   },
   "esim": {
     "error_loading": "Error loading eSIM products",
@@ -92,13 +162,73 @@
     "no_products_found": "No eSIM products found",
     "try_different_category": "Try selecting a different category or check back later."
   },
-  "cart": {
-    "shopping_cart": "Shopping Cart",
-    "empty_cart": "Your cart is empty",
-    "requires_shipping": "Requires shipping",
-    "total": "Total",
-    "proceed_to_checkout": "Proceed to Checkout",
-    "continue_shopping": "Continue Shopping"
+  "enhanced_esim_shop": {
+    "added_to_cart": "Added {{countryName}} eSIM plan ({{planData}}) to cart!",
+    "esim_plans": "eSIM Plans",
+    "worldwide": "Worldwide",
+    "subtitle": "Stay connected anywhere in the world with our reliable eSIM plans. Choose your destination and find the perfect data plan for your travels.",
+    "stats": {
+      "countries": "Countries",
+      "uptime": "Uptime",
+      "activation": "Activation"
+    },
+    "choose_destination": "Choose Your Destination",
+    "select_country_prompt": "Select a country to view available eSIM plans",
+    "why_choose_us": "Why Choose Our eSIM Plans?",
+    "why_choose_us_subtitle": "Experience seamless connectivity with our premium eSIM solutions designed for modern travelers",
+    "features": {
+      "instant_activation": {
+        "title": "Instant Activation",
+        "description": "Get connected immediately after purchase. No waiting, no delays. Start using your eSIM within minutes."
+      },
+      "global_coverage": {
+        "title": "Global Coverage",
+        "description": "Stay connected in over 190+ countries and regions worldwide with our extensive network partnerships."
+      },
+      "secure_reliable": {
+        "title": "Secure & Reliable",
+        "description": "Enterprise-grade security with 99.9% network uptime guarantee. Your data is protected with advanced encryption."
+      },
+      "easy_setup": {
+        "title": "Easy Setup",
+        "description": "Simple QR code activation"
+      },
+      "best_prices": {
+        "title": "Best Prices",
+        "description": "Competitive rates worldwide"
+      },
+      "no_contracts": {
+        "title": "No Contracts",
+        "description": "Pay as you go flexibility"
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Always here to help"
+      }
+    },
+    "cta": {
+      "title": "Ready to Stay Connected?",
+      "subtitle": "Join thousands of travelers who trust our eSIM solutions for their connectivity needs.",
+      "button": "Browse Countries"
+    }
+  },
+  "country_grid": {
+    "failed_to_load": "Failed to load countries",
+    "unable_to_load": "Unable to Load Countries",
+    "try_again": "Try Again",
+    "search_placeholder": "Search countries...",
+    "sort_by_name": "Sort by Name",
+    "sort_by_plans": "Sort by Plans",
+    "results_summary": "{{count}} of {{total}} countries",
+    "results_summary_with_match": "{{count}} of {{total}} countries matching \"{{searchTerm}}\"",
+    "total_plans": "{{count}} total plans",
+    "plan": "plan",
+    "plans": "plans",
+    "available": "available",
+    "no_countries_found": "No Countries Found",
+    "no_countries_match": "We couldn't find any countries matching \"{{searchTerm}}\". Try adjusting your search terms.",
+    "clear_search": "Clear Search",
+    "no_countries_available": "No countries available. Please check your backend configuration."
   },
   "checkout": {
     "title": "Checkout",
@@ -107,7 +237,20 @@
     "total": "Total",
     "payment_information": "Payment Information",
     "payment_form_placeholder": "Payment form will be here.",
-    "continue_shopping": "Continue Shopping"
+    "continue_shopping": "Continue Shopping",
+    "secure_checkout": "Secure Checkout",
+    "review_order": "Review your order and complete your purchase",
+    "cart_empty": "Your cart is empty",
+    "each": "each",
+    "order_total": "Order Total",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "free": "FREE",
+    "tax": "Tax",
+    "payment_form_integrated": "Payment form will be integrated here",
+    "complete_secure_checkout": "Complete Secure Checkout",
+    "secure_payment": "Secure Payment",
+    "payment_encrypted": "Your payment information is encrypted and secure. We never store your payment details."
   },
   "accessories": {
     "error_loading": "Error loading travel accessories",
@@ -302,5 +445,12 @@
     "esim_solutions": "eSIM Solutions",
     "explore_services": "Explore Services",
     "scroll_to_explore": "Scroll to explore"
+  },
+  "contact_section": {
+    "description": "Have questions or need assistance? Our team is here to help. Reach out to us via email, phone, or visit our office during business hours.",
+    "email_title": "Email Us",
+    "phone_title": "Call Us",
+    "office_hours_title": "Office Hours",
+    "office_hours_time": "Mon - Fri, 9 AM - 6 PM"
   }
 }

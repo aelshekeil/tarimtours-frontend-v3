@@ -10,7 +10,7 @@ interface CartSidebarProps {
 }
 
 const CartSidebar: React.FC<CartSidebarProps> = ({ isOpen, onClose, onCheckout }) => {
-  const { t, i18n } = useTranslation('cart');
+const { t, i18n } = useTranslation();
   const { cart, removeFromCart, updateQuantity, getTotalAmount, clearCart } = useCart();
   const items = cart.items;
   const [animatingItems, setAnimatingItems] = useState<Set<string>>(new Set());
@@ -115,10 +115,10 @@ const CartSidebar: React.FC<CartSidebarProps> = ({ isOpen, onClose, onCheckout }
       </div>
       
 <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mb-3">
-    {t('cart_sidebar_translations.your_cart_is_empty')}
+    {t('common.your_cart_is_empty')}
       </h3>
       <p className="text-gray-500 text-center max-w-xs leading-relaxed">
-        {t('cart_sidebar_translations.start_adding_travel_experiences', { ns: 'cart' })}
+        {t('common.start_adding_travel_experiences')}
       </p>
     </div>
   );
@@ -170,9 +170,9 @@ const CartSidebar: React.FC<CartSidebarProps> = ({ isOpen, onClose, onCheckout }
                     <div className="absolute inset-0 w-3 h-3 bg-green-400 rounded-full animate-ping opacity-20"></div>
                   </div>
                   <div>
-<h2 className="text-2xl font-bold tracking-tight">{t('cart', { ns: 'common' })}</h2>
+<h2 className="text-2xl font-bold tracking-tight">{t('common.cart')}</h2>
 <p className="text-blue-200 text-sm font-medium">
-                      {items.length} {items.length === 1 ? t('item', { ns: 'cart' }) : t('items', { ns: 'cart' })} • {formatPrice(getTotalAmount())}
+                      {items.length} {items.length === 1 ? t('common.item') : t('common.items')} • {formatPrice(getTotalAmount())}
                     </p>
                   </div>
                 </div>
@@ -277,7 +277,7 @@ const CartSidebar: React.FC<CartSidebarProps> = ({ isOpen, onClose, onCheckout }
                                 onClick={() => handleRemoveItem(item.id)}
                                 className="text-red-500 hover:text-red-700 text-sm font-bold hover:underline transition-all duration-200 hover:scale-105"
                               >
-                                {t('remove', { ns: 'cart' })}
+                                {t('common.remove')}
                               </button>
                             </div>
                           </div>
@@ -303,20 +303,20 @@ const CartSidebar: React.FC<CartSidebarProps> = ({ isOpen, onClose, onCheckout }
 <div className="flex justify-between items-center text-gray-600">
                       <span className="flex items-center">
                         <div className="w-2 h-2 bg-blue-400 rounded-full mr-2"></div>
-                        {t('subtotal', { ns: 'cart' })}
+                        {t('common.subtotal')}
                       </span>
                       <span className="font-semibold">{formatPrice(getTotalAmount())}</span>
                     </div>
-                    <div className="flex justify-between items-center text-gray-600">
+<div className="flex justify-between items-center text-gray-600">
                       <span className="flex items-center">
                         <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
-                        {t('shipping', { ns: 'cart' })}
+                        {t('common.shipping')}
                       </span>
-                      <span className="font-semibold text-green-600">{t('free', { ns: 'cart' })}</span>
+                      <span className="font-semibold text-green-600">{t('common.free')}</span>
                     </div>
-                    <div className="border-t border-gray-200/50 pt-3">
+<div className="border-t border-gray-200/50 pt-3">
                       <div className="flex justify-between items-center">
-                        <span className="text-xl font-bold text-gray-900">{t('total_price', { ns: 'cart' })}</span>
+                        <span className="text-xl font-bold text-gray-900">{t('common.total_price')}</span>
                         <span className="text-2xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                           {formatPrice(getTotalAmount())}
                         </span>
@@ -333,8 +333,8 @@ const CartSidebar: React.FC<CartSidebarProps> = ({ isOpen, onClose, onCheckout }
                   >
                     <div className="relative rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 text-white font-bold text-lg">
                       <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <span className="relative flex items-center justify-center">
-                        {t('proceed_to_checkout', { ns: 'common' })}
+<span className="relative flex items-center justify-center">
+                        {t('common.proceed_to_checkout')}
                         <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                         </svg>
@@ -342,11 +342,11 @@ const CartSidebar: React.FC<CartSidebarProps> = ({ isOpen, onClose, onCheckout }
                     </div>
                   </button>
                   
-                  <button
+<button
                     onClick={clearCart}
                     className="w-full bg-white/60 backdrop-blur-sm text-gray-700 py-3 px-6 rounded-2xl hover:bg-white/80 transition-all duration-300 font-semibold border border-white/40 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                   >
-                    {t('clear_cart', { ns: 'common' })}
+                    {t('common.clear_cart')}
                   </button>
                 </div>
               </div>

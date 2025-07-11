@@ -36,7 +36,7 @@ const Checkout: React.FC = () => {
             </div>
             <div className="flex items-center space-x-2 text-slate-600">
               <Lock className="w-4 h-4" />
-              <span className="text-sm font-medium">Secure Checkout</span>
+              <span className="text-sm font-medium">{t('checkout.secure_checkout')}</span>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@ const Checkout: React.FC = () => {
         {/* Page Title */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-slate-900 mb-4">{t('checkout.title')}</h1>
-          <p className="text-slate-600 text-lg">Review your order and complete your purchase</p>
+          <p className="text-slate-600 text-lg">{t('checkout.review_order')}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -66,7 +66,7 @@ const Checkout: React.FC = () => {
                     <div className="w-24 h-24 mx-auto mb-4 bg-slate-100 rounded-full flex items-center justify-center">
                       <ShoppingBag className="w-12 h-12 text-slate-400" />
                     </div>
-                    <p className="text-slate-600 text-lg">Your cart is empty</p>
+                    <p className="text-slate-600 text-lg">{t('checkout.cart_empty')}</p>
                   </div>
                 ) : (
                   <div className="space-y-6">
@@ -88,7 +88,7 @@ const Checkout: React.FC = () => {
                                   {t('checkout.quantity')}: {item.quantity}
                                 </span>
                                 <span className="text-sm text-slate-500">
-                                  ${item.price.toFixed(2)} each
+                                  ${item.price.toFixed(2)} {t('checkout.each')}
                                 </span>
                               </div>
                             </div>
@@ -114,22 +114,22 @@ const Checkout: React.FC = () => {
               <div className="bg-gradient-to-r from-emerald-600 to-teal-600 p-6">
                 <div className="flex items-center space-x-3 text-white">
                   <CheckCircle className="w-6 h-6" />
-                  <h3 className="text-xl font-bold">Order Total</h3>
+                  <h3 className="text-xl font-bold">{t('checkout.order_total')}</h3>
                 </div>
               </div>
               
               <div className="p-6">
                 <div className="space-y-4">
                   <div className="flex justify-between items-center py-2 border-b border-slate-200">
-                    <span className="text-slate-600">Subtotal</span>
+                    <span className="text-slate-600">{t('checkout.subtotal')}</span>
                     <span className="font-semibold text-slate-900">${getTotalAmount().toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between items-center py-2 border-b border-slate-200">
-                    <span className="text-slate-600">Shipping</span>
-                    <span className="font-semibold text-emerald-600">FREE</span>
+                    <span className="text-slate-600">{t('checkout.shipping')}</span>
+                    <span className="font-semibold text-emerald-600">{t('checkout.free')}</span>
                   </div>
                   <div className="flex justify-between items-center py-2 border-b border-slate-200">
-                    <span className="text-slate-600">Tax</span>
+                    <span className="text-slate-600">{t('checkout.tax')}</span>
                     <span className="font-semibold text-slate-900">$0.00</span>
                   </div>
                   <div className="flex justify-between items-center pt-4">
@@ -156,7 +156,7 @@ const Checkout: React.FC = () => {
                   </div>
                   <p className="text-slate-600 mb-4">{t('checkout.payment_form_placeholder')}</p>
                   <div className="bg-slate-50 rounded-lg p-4 border-2 border-dashed border-slate-200">
-                    <p className="text-sm text-slate-500">Payment form will be integrated here</p>
+                    <p className="text-sm text-slate-500">{t('checkout.payment_form_integrated')}</p>
                   </div>
                 </div>
               </div>
@@ -168,17 +168,17 @@ const Checkout: React.FC = () => {
               className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-8 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-indigo-700 disabled:from-slate-400 disabled:to-slate-500 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-2"
             >
               <Lock className="w-5 h-5" />
-              <span>Complete Secure Checkout</span>
+              <span>{t('checkout.complete_secure_checkout')}</span>
             </button>
 
             {/* Security Notice */}
             <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
               <div className="flex items-center space-x-2 mb-2">
                 <Lock className="w-4 h-4 text-slate-600" />
-                <span className="text-sm font-medium text-slate-700">Secure Payment</span>
+                <span className="text-sm font-medium text-slate-700">{t('checkout.secure_payment')}</span>
               </div>
               <p className="text-xs text-slate-600">
-                Your payment information is encrypted and secure. We never store your payment details.
+                {t('checkout.payment_encrypted')}
               </p>
             </div>
           </div>

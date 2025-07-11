@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Country, fetchCountriesWithPlans } from '../lib/esimApi';
 import countriesLib from 'i18n-iso-countries';
 import enLocale from 'i18n-iso-countries/langs/en.json';
@@ -11,6 +12,7 @@ interface CountryGridProps {
 }
 
 const CountryGrid: React.FC<CountryGridProps> = ({ onCountrySelect }) => {
+  const { t } = useTranslation();
   const [countries, setCountries] = useState<Country[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -27,7 +29,7 @@ const CountryGrid: React.FC<CountryGridProps> = ({ onCountrySelect }) => {
         setCountries(data);
       } catch (err) {
         console.error('Error loading countries:', err);
-        setError('Failed to load countries');
+        setError(t('country_grid.failed_to_load'));
       } finally {
         setLoading(false);
       }
@@ -97,14 +99,14 @@ const CountryGrid: React.FC<CountryGridProps> = ({ onCountrySelect }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
               </svg>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Unable to Load Countries</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('country_grid.unable_to_load')}</h3>
             <p className="text-gray-600 mb-6">{error}</p>
           </div>
           <button
             onClick={() => window.location.reload()}
             className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg hover:from-blue-700 hover:to-indigo-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            Try Again
+            {t('country_grid.try_again')}
           </button>
         </div>
       </div>
@@ -120,7 +122,7 @@ const CountryGrid: React.FC<CountryGridProps> = ({ onCountrySelect }) => {
           <div className="relative max-w-md w-full">
             <input
               type="text"
-              placeholder="Search countries..."
+              placeholder={t('country_grid.search_placeholder')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full px-4 py-3 pl-12 pr-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white shadow-sm hover:shadow-md transition-shadow duration-300"
@@ -156,8 +158,8 @@ const CountryGrid: React.FC<CountryGridProps> = ({ onCountrySelect }) => {
                 onChange={(e) => setSortBy(e.target.value as 'name' | 'plans')}
                 className="appearance-none bg-white border border-gray-200 rounded-lg px-4 py-2 pr-8 focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm hover:shadow-md transition-shadow duration-300"
               >
-                <option value="name">Sort by Name</option>
-                <option value="plans">Sort by Plans</option>
+                <option value="name">{t('country_grid.sort_by_name')}</option>
+                <option value="plans">{t('country_grid.sort_by_plans')}</option>
               </select>
               <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                 <svg className="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -199,11 +201,12 @@ const CountryGrid: React.FC<CountryGridProps> = ({ onCountrySelect }) => {
         {/* Results Summary */}
         <div className="flex items-center justify-between text-sm text-gray-600 mb-4">
           <span>
-            {filteredCountries.length} of {countries.length} countries
-            {searchTerm && ` matching "${searchTerm}"`}
+            {searchTerm
+              ? t('country_grid.results_summary_with_match', { count: filteredCountries.length, total: countries.length, searchTerm })
+              : t('country_grid.results_summary', { count: filteredCountries.length, total: countries.length })}
           </span>
           <span className="text-xs bg-gray-100 px-2 py-1 rounded">
-            {countries.reduce((sum, country) => sum + (country.plans?.length || 0), 0)} total plans
+            {t('country_grid.total_plans', { count: countries.reduce((sum, country) => sum + (country.plans?.length || 0), 0) })}
           </span>
         </div>
       </div>
@@ -243,7 +246,7 @@ const CountryGrid: React.FC<CountryGridProps> = ({ onCountrySelect }) => {
                 {country.name}
               </h3>
               <p className="text-xs text-gray-500 mt-1">
-                {country.plans?.length || 0} plan{(country.plans?.length || 0) !== 1 ? 's' : ''}
+                {country.plans?.length || 0} {t((country.plans?.length || 0) !== 1 ? 'country_grid.plans' : 'country_grid.plan')}
               </p>
             </div>
           ))}
@@ -278,14 +281,14 @@ const CountryGrid: React.FC<CountryGridProps> = ({ onCountrySelect }) => {
                       {country.name}
                     </h3>
                     <p className="text-xs text-gray-500">
-                      {country.plans?.length || 0} plan{(country.plans?.length || 0) !== 1 ? 's' : ''} available
+                      {country.plans?.length || 0} {t((country.plans?.length || 0) !== 1 ? 'country_grid.plans' : 'country_grid.plan')} {t('country_grid.available')}
                     </p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">
                   {(country.plans?.length || 0) > 0 && (
                     <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">
-                      {country.plans?.length} plan{(country.plans?.length || 0) !== 1 ? 's' : ''}
+                      {country.plans?.length} {t((country.plans?.length || 0) !== 1 ? 'country_grid.plans' : 'country_grid.plan')}
                     </span>
                   )}
                   <svg className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -307,15 +310,15 @@ const CountryGrid: React.FC<CountryGridProps> = ({ onCountrySelect }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">No Countries Found</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('country_grid.no_countries_found')}</h3>
             <p className="text-gray-600 mb-6">
-              We couldn't find any countries matching "{searchTerm}". Try adjusting your search terms.
+              {t('country_grid.no_countries_match', { searchTerm })}
             </p>
             <button
               onClick={() => setSearchTerm('')}
               className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300"
             >
-              Clear Search
+              {t('country_grid.clear_search')}
             </button>
           </div>
         </div>
@@ -330,8 +333,8 @@ const CountryGrid: React.FC<CountryGridProps> = ({ onCountrySelect }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">No Countries Available</h3>
-            <p className="text-gray-600">No countries available. Please check your backend configuration.</p>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('country_grid.no_countries_available')}</h3>
+            <p className="text-gray-600">{t('country_grid.no_countries_available')}</p>
           </div>
         </div>
       )}

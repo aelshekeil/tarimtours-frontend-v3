@@ -72,8 +72,76 @@
     "no_packages_found_text": "لم نتمكن من العثور على أي باقات تطابق معاييرك. حاول تعديل عوامل التصفية الخاصة بك.",
     "error_loading_packages": "خطأ في تحميل الباقات",
     "try_again": "حاول مرة أخرى",
+    "your_cart_is_empty": "سلة التسوق الخاصة بك فارغة",
+    "start_adding_travel_experiences": "ابدأ في إضافة بعض تجارب السفر المذهلة إلى سلة التسوق الخاصة بك!",
+    "cart": "عربة التسوق",
+    "item": "منتج",
+    "items": "المنتجات",
+    "remove": "إزالة",
+    "subtotal": "المجموع الفرعي",
+    "shipping": "الشحن",
+    "free": "مجاني",
+    "total_price": "المجموع",
     "proceed_to_checkout": "المتابعة إلى الدفع",
-    "clear_cart": "إفراغ السلة"
+    "clear_cart": "إفراغ السلة",
+    "trusted_partner": "شريكك الموثوق به لخدمات السفر العالمية ومعالجة التأشيرات وحلول الأعمال.",
+    "services_title": "الخدمات",
+    "visa_services_link": "خدمات التأشيرات",
+    "idl_link": "رخصة القيادة الدولية",
+    "business_incorporation_link": "تأسيس الشركات",
+    "travel_packages_link": "باقات السفر",
+    "esim_sales_link": "مبيعات eSIM",
+    "quick_links_title": "روابط سريعة",
+    "about_us_link": "معلومات عنا",
+    "track_application_link": "تتبع الطلب",
+    "faq_link": "الأسئلة الشائعة",
+    "terms_conditions_link": "البنود و الظروف",
+    "privacy_policy_link": "سياسة الخصوصية",
+    "all_rights_reserved": "© 2024 تريم تورز. كل الحقوق محفوظة.",
+    "back_to_top": "العودة إلى الأعلى",
+    "our_premium_services": "خدماتنا المميزة",
+    "comprehensive_solutions_description": "حلول سفر وأعمال شاملة مصممة لجعل رحلتك سلسة وناجحة",
+    "most_popular": "الأكثر شعبية",
+    "need_help_choosing": "هل تحتاج مساعدة في الاختيار؟",
+    "contact_our_experts": "تواصل مع خبرائنا",
+    "visa_services_title": "خدمات التأشيرات",
+    "visa_services_description": "خدمات التأشيرة الإلكترونية وتأشيرة العبور لعدة دول بمعالجة سريعة.",
+    "visa_services_feature1": "معالجة التأشيرة الإلكترونية",
+    "visa_services_feature2": "تأشيرة العبور",
+    "visa_services_feature3": "مساعدة في المستندات",
+    "visa_services_feature4": "موافقة سريعة",
+    "international_driving_license_title": "رخصة القيادة الدولية",
+    "international_driving_license_description": "احصل على رخصة القيادة الدولية الخاصة بك المعترف بها في جميع أنحاء العالم.",
+    "international_driving_license_feature1": "اعتراف عالمي",
+    "international_driving_license_feature2": "معالجة سريعة",
+    "international_driving_license_feature3": "دعم المستندات",
+    "international_driving_license_feature4": "لغات متعددة",
+    "business_incorporation_title": "تأسيس الشركات",
+    "business_incorporation_description": "أسس عملك في إندونيسيا، ماليزيا، سنغافورة، أو المملكة المتحدة.",
+    "business_incorporation_feature1": "تسجيل الشركات",
+    "business_incorporation_feature2": "الوثائق القانونية",
+    "business_incorporation_feature3": "إعداد الضرائب",
+    "business_incorporation_feature4": "مساعدة مصرفية",
+    "travel_packages_title": "باقات السفر",
+    "travel_packages_description": "تجارب سفر منسقة إلى وجهات حول العالم.",
+    "travel_packages_feature1": "مسارات مخصصة",
+    "travel_packages_feature2": "خصومات جماعية",
+    "travel_packages_feature3": "مرشدون محليون",
+    "travel_packages_feature4": "خيارات شاملة",
+    "esim_sales_title": "مبيعات eSIM",
+    "esim_sales_description": "ابق على اتصال عالميًا مع باقات eSIM الخاصة بنا.",
+    "esim_sales_feature1": "تغطية عالمية",
+    "esim_sales_feature2": "تفعيل فوري",
+    "esim_sales_feature3": "خطط بيانات",
+    "esim_sales_feature4": "لا توجد رسوم تجوال",
+    "apply_now_action": "قدم الآن",
+    "learn_more_action": "تعلم المزيد",
+    "view_packages_action": "عرض الباقات",
+    "shop_now_action": "تسوق الآن",
+    "login_required_badge": "تسجيل الدخول مطلوب",
+    "explore_southeast_asia_description": "استكشف أفضل ما في جنوب شرق آسيا مع تريم تورز",
+    "search_destinations_activities_placeholder": "ابحث عن وجهات، أنشطة...",
+    "days": "أيام"
   },
   "esim": {
     "error_loading": "خطأ في تحميل منتجات eSIM",
@@ -90,39 +158,77 @@
     "price": "السعر",
     "in_cart": "في السلة",
     "add_to_cart": "أضف إلى السلة",
-    "stock_status": "Only {{count}} left in stock",
+    "stock_status": "تبقى {{count}} فقطففياالمخزونن",
     "no_products_found": "لم يتم العثور على منتجات eSIM",
     "try_different_category": "حاول تحديد فئة مختلفة أو تحقق لاحقًا."
   },
-  "cart": {
-    "shopping_cart": "سلة التسوق",
-    "empty_cart": "سلتك فارغة",
-    "requires_shipping": "يتطلب الشحن",
-    "total": "الإجمالي",
-    "proceed_to_checkout": "المتابعة إلى الدفع",
-    "continue_shopping": "متابعة التسوق",
-    "cart": "عربة التسوق",
-    "item": "منتج",
-    "items": "المنتجات",
-    "your_cart_is_empty": "سلة التسوق الخاصة بك فارغة",
-    "start_adding_travel_experiences": "ابدأ في إضافة بعض تجارب السفر المذهلة إلى سلة التسوق الخاصة بك!",
-    "remove": "إزالة",
-    "subtotal": "المجموع الفرعي",
-    "shipping": "الشحن",
-    "free": "مجاني",
-    "total_price": "المجموع",
-    "cart_sidebar_translations": {
-      "your_cart_is_empty": "سلة التسوق الخاصة بك فارغة",
-      "start_adding_travel_experiences": "ابدأ في إضافة بعض تجارب السفر المذهلة إلى سلة التسوق الخاصة بك!",
-      "cart": "عربة التسوق",
-      "item": "منتج",
-      "items": "المنتجات",
-      "remove": "إزالة",
-      "subtotal": "المجموع الفرعي",
-      "shipping": "الشحن",
-      "free": "مجاني",
-      "total_price": "المجموع"
+  "enhanced_esim_shop": {
+    "added_to_cart": "تمت إضافة خطة eSIM لـ {{countryName}} ({{planData}}) إلى عربة التسوق!",
+    "esim_plans": "خطط eSIM",
+    "worldwide": "في جميع أنحاء العالم",
+    "subtitle": "ابق على اتصال في أي مكان في العالم من خلال خطط eSIM الموثوقة لدينا. اختر وجهتك وابحث عن خطة البيانات المثالية لرحلاتك.",
+    "stats": {
+      "countries": "الدول",
+      "uptime": "وقت التشغيل",
+      "activation": "التنشيط"
+    },
+    "choose_destination": "اختر وجهتك",
+    "select_country_prompt": "حدد دولة لعرض خطط eSIM المتاحة",
+    "why_choose_us": "لماذا تختار خطط eSIM الخاصة بنا؟",
+    "why_choose_us_subtitle": "جرب الاتصال السلس مع حلول eSIM المتميزة المصممة للمسافرين العصريين",
+    "features": {
+      "instant_activation": {
+        "title": "التنشيط الفوري",
+        "description": "اتصل بالإنترنت فور الشراء. لا انتظار ولا تأخير. ابدأ في استخدام eSIM في غضون دقائق."
+      },
+      "global_coverage": {
+        "title": "تغطية عالمية",
+        "description": "ابق على اتصال في أكثر من 190 دولة ومنطقة حول العالم من خلال شراكات شبكتنا الواسعة."
+      },
+      "secure_reliable": {
+        "title": "آمن وموثوق",
+        "description": "أمان على مستوى المؤسسات مع ضمان وقت تشغيل للشبكة بنسبة 99.9٪. بياناتك محمية بتشفير متقدم."
+      },
+      "easy_setup": {
+        "title": "إعداد سهل",
+        "description": "تنشيط بسيط عبر رمز الاستجابة السريعة"
+      },
+      "best_prices": {
+        "title": "أفضل الأسعار",
+        "description": "أسعار تنافسية في جميع أنحاء العالم"
+      },
+      "no_contracts": {
+        "title": "بدون عقود",
+        "description": "مرونة الدفع حسب الاستخدام"
+      },
+      "support": {
+        "title": "دعم على مدار الساعة طوال أيام الأسبوع",
+        "description": "دائما هنا للمساعدة"
+      }
+    },
+    "cta": {
+      "title": "هل أنت مستعد للبقاء على اتصال؟",
+      "subtitle": "انضم إلى آلاف المسافرين الذين يثقون في حلول eSIM الخاصة بنا لتلبية احتياجات الاتصال الخاصة بهم.",
+      "button": "تصفح الدول"
     }
+  },
+  "country_grid": {
+    "failed_to_load": "فشل تحميل الدول",
+    "unable_to_load": "غير قادر على تحميل الدول",
+    "try_again": "حاول مرة أخرى",
+    "search_placeholder": "ابحث في البلدان ...",
+    "sort_by_name": "الترتيب حسب الاسم",
+    "sort_by_plans": "الترتيب حسب الخطط",
+    "results_summary": "{{count}} من {{total}} دولة",
+    "results_summary_with_match": "{{count}} من {{total}} دولة تطابق \"{{searchTerm}}\"",
+    "total_plans": "إجمالي الخطط {{count}}",
+    "plan": "خطة",
+    "plans": "خطط",
+    "available": "متاح",
+    "no_countries_found": "لم يتم العثور على دول",
+    "no_countries_match": "لم نتمكن من العثور على أي دولة تطابق \"{{searchTerm}}\". حاول تعديل مصطلحات البحث الخاصة بك.",
+    "clear_search": "مسح البحث",
+    "no_countries_available": "لا توجد دول متاحة. يرجى التحقق من تكوين الخلفية الخاصة بك."
   },
   "checkout": {
     "title": "الدفع",
@@ -131,7 +237,20 @@
     "total": "الإجمالي",
     "payment_information": "معلومات الدفع",
     "payment_form_placeholder": "سيتم وضع نموذج الدفع هنا.",
-    "continue_shopping": "متابعة التسوق"
+    "continue_shopping": "متابعة التسوق",
+    "secure_checkout": "الدفع الآمن",
+    "review_order": "راجع طلبك وأكمل عملية الشراء",
+    "cart_empty": "سلة التسوق الخاصة بك فارغة",
+    "each": "لكل",
+    "order_total": "إجمالي الطلب",
+    "subtotal": "المجموع الفرعي",
+    "shipping": "الشحن",
+    "free": "مجاني",
+    "tax": "الضريبة",
+    "payment_form_integrated": "سيتم دمج نموذج الدفع هنا",
+    "complete_secure_checkout": "إتمام الدفع الآمن",
+    "secure_payment": "الدفع الآمن",
+    "payment_encrypted": "معلومات الدفع الخاصة بك مشفرة وآمنة. نحن لا نقوم بتخزين تفاصيل الدفع الخاصة بك."
   },
   "accessories": {
     "error_loading": "خطأ في تحميل إكسسوارات السفر",
@@ -286,7 +405,8 @@
     "email_address": "عنوان البريد الإلكتروني",
     "save_changes": "حفظ التغييرات",
     "saving": "جارٍ الحفظ...",
-    "change_password": "تغيير كلمة المرور الحالية",
+    "change_password": "تغيير كلمة المرور",
+    "current_password": "Current Password",
     "new_password": "New Password",
     "confirm_new_password": "تأكيد كلمة المرور الجديدة",
     "update_password": "تحديث كلمة المرور",
@@ -302,15 +422,34 @@
     "subtitle": "كل ما تحتاجه لتجربة سفر سلسة.",
     "esim": {
       "title": "eSIM وبيانات الدفع المسبق",
-    "description": "ابق على اتصال في جميع أنحاء العالم مع شرائح eSIM التي يتم تفعيلها على الفور. تغطية عالمية، بدون رسوم تجوال.",
+      "description": "ابق على اتصال في جميع أنحاء العالم مع شرائح eSIM التي يتم تفعيلها على الفور. تغطية عالمية، بدون رسوم تجوال.",
       "button": "تصفح شرائح eSIM"
     },
     "accessories": {
       "title": "إكسسوارات السفر",
-    "description": "الراحة والملاءمة أثناء التنقل - إلكترونيات وأمتعة ومستلزمات ضرورية للسفر الذكي.",
+      "description": "الراحة والملاءمة أثناء التنقل - إلكترونيات وأمتعة ومستلزمات ضرورية للسفر الذكي.",
       "button": "تصفح الإكسسوارات"
     },
     "packages": {
-      "title": "باقات السفر"
+      "title": "باقات السفر",
+      "description": "باقات سفر منسقة لرحلات لا تنسى. استكشف العالم مع عروضنا الحصرية.",
+      "button": "استكشاف الباقات"
     }
-  }}
+  },
+  "hero": {
+    "your_gateway_part1": "بوابتك إلى",
+    "global_travel": "السفر العالمي",
+    "and_services": "والخدمات",
+    "specializing_in": "متخصصون في",
+    "esim_solutions": "حلول eSIM",
+    "explore_services": "استكشف الخدمات",
+    "scroll_to_explore": "مرر للاستكشاف"
+  },
+  "contact_section": {
+    "description": "هل لديك أسئلة أو تحتاج إلى مساعدة؟ فريقنا هنا للمساعدة. تواصل معنا عبر البريد الإلكتروني أو الهاتف أو قم بزيارة مكتبنا خلال ساعات العمل.",
+    "email_title": "راسلنا عبر البريد الإلكتروني",
+    "phone_title": "اتصل بنا",
+    "office_hours_title": "ساعات العمل",
+    "office_hours_time": "الاثنين - الجمعة ، 9 صباحًا - 6 مساءً"
+  }
+}

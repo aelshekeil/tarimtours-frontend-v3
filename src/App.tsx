@@ -4,8 +4,16 @@ import Header from './components/Header';
 import RouterComponent from './components/Router';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton'; // Import the WhatsAppButton component
+import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 
 function App() {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    document.documentElement.dir = i18n.dir();
+  }, [i18n, i18n.language]);
+
   console.log("App component rendered");
   return (
     <CartProvider>
