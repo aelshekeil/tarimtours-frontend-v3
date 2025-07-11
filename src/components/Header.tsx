@@ -1,6 +1,6 @@
 import { useState, FC, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, User, ShoppingCart, Globe, ChevronDown, LogOut, UserCircle, Sparkles, MapPin } from 'lucide-react';
+import { Menu, X, User, ShoppingCart, Globe, ChevronDown, LogOut, UserCircle } from 'lucide-react';
 import AuthModal from './AuthModal';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../hooks/useAuth';
