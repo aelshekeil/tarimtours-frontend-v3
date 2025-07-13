@@ -23,7 +23,7 @@ export const useAuth = () => {
       const response = await strapiAPI.login(identifier, password);
       setUser(response.user);
       localStorage.setItem('user', JSON.stringify(response.user));
-      localStorage.setItem('jwt', response.jwt);
+      localStorage.setItem('jwt', response.access_token);
       return response;
     } catch (error) {
       throw error;
@@ -35,7 +35,7 @@ export const useAuth = () => {
       const response = await strapiAPI.register(username, email, password);
       setUser(response.user);
       localStorage.setItem('user', JSON.stringify(response.user));
-      localStorage.setItem('jwt', response.jwt);
+      localStorage.setItem('jwt', response.access_token);
       return response;
     } catch (error) {
       throw error;

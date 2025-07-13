@@ -1,5 +1,13 @@
+import { createClient } from '@supabase/supabase-js';
+
+import { API_URL } from './types';
+
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_KEY;
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
 import {
-  API_URL,
   AuthResponse,
   TravelPackage,
   ESIMProduct,
@@ -16,15 +24,15 @@ class StrapiAPI {
   }
 
   setToken(token: string) {
-    localStorage.setItem('jwt', token);
+    localStorage.setItem('supabase.auth.token', token);
   }
 
   removeToken() {
-    localStorage.removeItem('jwt');
+    localStorage.removeItem('supabase.auth.token');
   }
 
   private async request<T>(endpoint: string, options?: RequestInit): Promise<T> {
-    const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem('supabase.auth.token');
     const headers: Record<string, string> = {
       'Content-Type': 'application/json',
       ...(options?.headers as Record<string, string>),
@@ -77,25 +85,70 @@ class StrapiAPI {
   }
 
   async register(username: string, email: string, password: string): Promise<AuthResponse> {
-    return this.request<AuthResponse>('auth/local/register', {
-      method: 'POST',
-      body: JSON.stringify({ username, email, password }),
+    const { error: signUpError } = await supabase.auth.signUp({
+      email: email,
+      password: password,
+      options: {
+        emailRedirectTo: 'http://localhost:5000/',
+        data: {
+          first_name: username,
+          last_name: username,
+          phone: '1234567890',
+        },
+      },
     });
+
+    if (signUpError) {
+      throw new Error(signUpError.message);
+    }
+
+    const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
+      email: email,
+      password: password,
+    });
+
+    if (signInError) {
+      throw new Error(signInError.message);
+    }
+
+    return {
+      access_token: signInData.session?.access_token || '',
+      refresh_token: signInData.session?.refresh_token || '',
+      user: signInData.user,
+    };
   }
 
   async login(identifier: string, password: string): Promise<AuthResponse> {
-    return this.request<AuthResponse>('auth/local', {
+    console.log('Logging in with endpoint: auth/login');
+    const response = await this.request<AuthResponse>('auth/login', {
       method: 'POST',
-      body: JSON.stringify({ identifier, password }),
+      body: JSON.stringify({ email: identifier, password }),
     });
+    this.setToken(response.access_token);
+    return response;
   }
 
-  async updateProfile(userId: number, data: { username?: string; email?: string }): Promise<any> {
-    return this.put<any>(`users/${userId}`, data);
+  async updateProfile(userId: string, data: any): Promise<any> {
+    const { data: user, error } = await supabase.auth.admin.updateUserById(
+      userId,
+      { user_metadata: data }
+    );
+
+    if (error) {
+      throw new Error(error.message);
+    }
+
+    return user;
   }
 
-  async changePassword(data: { currentPassword?: string; password?: string, passwordConfirmation?: string }): Promise<any> {
-    return this.post<any>('auth/change-password', data);
+  async changePassword(password: string): Promise<any> {
+    const { data: user, error } = await supabase.auth.updateUser({ password });
+
+    if (error) {
+      throw new Error(error.message);
+    }
+
+    return user;
   }
 
   async getTravelPackages(featuredOnly?: boolean): Promise<TravelPackage[]> {
@@ -129,7 +182,7 @@ class StrapiAPI {
       }
     }
 
-    const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem('supabase.auth.token');
     const response = await fetch(`${this.baseURL}/api/visa-applications`, {
       method: 'POST',
       headers: token ? { Authorization: `Bearer ${token}` } : {},
@@ -182,7 +235,7 @@ class StrapiAPI {
     const formData = new FormData();
     formData.append('files', file);
 
-    const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem('supabase.auth.token');
     const response = await fetch(`${this.baseURL}/api/upload`, {
       method: 'POST',
       headers: token ? { Authorization: `Bearer ${token}` } : {},

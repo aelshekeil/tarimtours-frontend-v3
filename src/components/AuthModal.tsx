@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import User from 'lucide-react/dist/esm/icons/user';
 import Mail from 'lucide-react/dist/esm/icons/mail';
 import Lock from 'lucide-react/dist/esm/icons/lock';
@@ -13,6 +14,7 @@ interface AuthModalProps {
 }
 
 const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
+  const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -40,23 +42,23 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
     try {
       let userResponse;
       if (isLogin) {
-        userResponse = await strapiAPI.login(formData.username, formData.password);
+        userResponse = await strapiAPI.login(formData.email, formData.password);
       } else {
         userResponse = await strapiAPI.register(formData.username, formData.email, formData.password);
       }
       
-      if (!userResponse.jwt) {
+      if (!userResponse.access_token) {
         throw new Error('Authentication failed, no token received.');
       }
 
       // Store user data in localStorage and dispatch authChange event
       localStorage.setItem('user', JSON.stringify(userResponse));
 
-      // Refresh the page after successful login
+      // Redirect to dashboard after successful login
       if (isLogin) {
-        window.location.reload();
+        navigate('/dashboard');
       }
-      strapiAPI.setToken(userResponse.jwt); // Set the token in the API service
+      strapiAPI.setToken(userResponse.access_token); // Set the token in the API service
 
       onClose();
       setFormData({ username: '', email: '', password: '' });
@@ -105,44 +107,44 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
         {/* Form */}
         <div className="px-8 pb-8">
           <div className="space-y-6">
-            {/* Username Field */}
+            {/* Email Field */}
             <div className="space-y-2">
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Username
+                Email Address
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <User className="text-gray-400" size={18} />
+                  <Mail className="text-gray-400" size={18} />
                 </div>
                 <input
-                  type="text"
-                  name="username"
-                  value={formData.username}
+                  type="email"
+                  name="email"
+                  value={formData.email}
                   onChange={handleChange}
                   className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
-                  placeholder="Enter your username"
+                  placeholder="Enter your email address"
                   required
                 />
               </div>
             </div>
 
-            {/* Email Field (Registration only) */}
+            {/* Username Field (Registration only) */}
             {!isLogin && (
               <div className="space-y-2">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Email Address
+                  Username
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <Mail className="text-gray-400" size={18} />
+                    <User className="text-gray-400" size={18} />
                   </div>
                   <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
+                    type="text"
+                    name="username"
+                    value={formData.username}
                     onChange={handleChange}
                     className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
-                    placeholder="Enter your email address"
+                    placeholder="Enter your username"
                     required
                   />
                 </div>

@@ -32,8 +32,18 @@ export interface StrapiUserAttributes {
 export type StrapiUser = StrapiEntity<StrapiUserAttributes>;
 
 export interface AuthResponse {
-  jwt: string;
-  user: StrapiUserAttributes; // Note: Strapi's auth/local returns user attributes directly, not an entity
+  access_token: string;
+  refresh_token: string;
+  user: any;
+}
+
+export interface Client {
+  id: number;
+  first_name: string;
+  last_name: string;
+  email: string;
+  phone: string;
+  country: string;
 }
 
 // Define the structure for the image object returned by Strapi

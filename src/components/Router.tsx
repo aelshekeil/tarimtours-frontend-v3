@@ -10,6 +10,8 @@ const ApplicationTracking = lazy(() => import('./ApplicationTracking'));
 const Shop = lazy(() => import('./Shop'));
 const AuthGuard = lazy(() => import('./AuthGuard'));
 const Profile = lazy(() => import('./Profile'));
+const Dashboard = lazy(() => import('./Dashboard'));
+const Clients = lazy(() => import('./Clients'));
 
 // New components we'll create
 const EnhancedESIMShop = lazy(() => import('./EnhancedESIMShop'));
@@ -71,6 +73,8 @@ const RouterComponent: FC = () => {
         <Route path="/tracking" element={<ApplicationTracking />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/profile" element={<AuthGuard><Profile /></AuthGuard>} />
+        <Route path="/dashboard" element={<AuthGuard><Dashboard /></AuthGuard>} />
+        <Route path="/clients" element={<AuthGuard><Clients /></AuthGuard>} />
         <Route path="/esim" element={<EnhancedESIMShop />} />
         <Route path="/accessories" element={<TravelAccessories />} />
         <Route path="/enhanced-travel-packages" element={<EnhancedTravelPackages />} />

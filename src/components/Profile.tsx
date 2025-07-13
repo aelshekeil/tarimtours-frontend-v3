@@ -66,11 +66,7 @@ const Profile: React.FC = () => {
     setError(null);
     setSuccess(null);
     try {
-      await strapiAPI.changePassword({
-        currentPassword,
-        password: newPassword,
-        passwordConfirmation: confirmPassword,
-      });
+      await strapiAPI.changePassword(newPassword);
       setSuccess(t('profile.password_changed_successfully'));
       setCurrentPassword('');
       setNewPassword('');
